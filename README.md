@@ -1,4 +1,4 @@
-# Ed-s-Sketchpad
+# Ed's Sketchpad
 A simple Sketchpad.
 
 You can check a preview [clicking here](https://edmilsonrobson.github.io/Ed-s-Sketchpad/index.html).
