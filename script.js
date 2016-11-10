@@ -1,4 +1,4 @@
-var grid_size = 16; // e.g 4 x 4
+var grid_size = 64; // e.g 4 x 4
 var brush_power = 40;
 
 var BrushMode = {
