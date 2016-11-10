@@ -1,4 +1,4 @@
-var number_of_squares = 36;
+var grid_size = 16; // e.g 4 x 4
 var brush_power = 40;
 
 var BrushMode = {
@@ -9,12 +9,21 @@ var BrushMode = {
 var current_mode = BrushMode.GRAYSCALE;
 
 $(document).ready(function (){
-	populate(number_of_squares);
+	populate();
 });
 
 function populate(){
-	for (i = 0 ; i < number_of_squares ; i++){
+	dimension = $('#grid').height();
+	console.log(dimension);
+	console.log("Grid Size: " + grid_size);
+	console.log("Dimension: " + dimension);
+	square_height = parseInt(Math.sqrt(parseInt(dimension*dimension/grid_size)));
+	square_width = parseInt(Math.sqrt(parseInt(dimension*dimension/grid_size)));
+	console.log("Square Height/Width: " + square_width);
+	for (i = 0 ; i < grid_size ; i++){ // e.g 36 x 36
 		$('#grid').append('<div class="grid-item"></div>');
+		$('.grid-item').css('height', square_height);
+		$('.grid-item').css('width', square_width);
 	}
 
 	$('.grid-item').hover(
@@ -45,9 +54,9 @@ function populate(){
 }
 
 function askNumberOfGrids(){
-	var new_number_of_grids = prompt("Please enter the desired number of squares (between 1 and 40).", 36);
+	var new_number_of_grids = prompt("Please enter the desired number size of the grid (between 1 and 40).", 16);
 	if (new_number_of_grids > 0 && new_number_of_grids <= 40){
-		number_of_squares = new_number_of_grids;
+		grid_size = new_number_of_grids; // e.g 36 x 36
 	} else{
 		alert("Invalid number of grids. Please pick a number between 1 and 40.")
 	}
