@@ -28,3 +28,7 @@
 .highlight {
 	background-color: rgb(50,50,50);
 }
+
+#buttons-list {
+	margin: 50px 0px;
+}
