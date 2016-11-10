@@ -4,7 +4,18 @@
           box-sizing: border-box;
 }*/
 
+body {
+	background-color: #a7cdbd;
+	font-family: Helvetica, sans-serif;
+	color: #333;
+}
 
+button {
+	background-color: #fcdfa6;
+	border: 1px solid black;
+	color: black;	
+	box-shadow: 0px 2.5px 5px #888;
+}
 
 #grid {
 	background-color: #FFF;
@@ -13,6 +24,7 @@
 	padding: 0px;
 	margin: 0px;
 	border: 3px solid black;
+	box-shadow: 5px 5px 5px #888;
 }
 
 .grid-item {

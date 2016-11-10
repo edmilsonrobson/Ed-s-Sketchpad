@@ -72,7 +72,7 @@ function askBrushPower(){
 	var new_brush_power = prompt("Please enter the desired brush \"power\" (between " + min_value + " and " + max_value +").", 40);
 	if (new_brush_power >= min_value && new_brush_power <= max_value){
 		brush_power = new_brush_power;
-	} else{
+	} else if (new_brush_power != grid_size) {
 		alert("Invalid brush power. Please pick a number between " + min_value + " and " + max_value + ".");
 	}
 
