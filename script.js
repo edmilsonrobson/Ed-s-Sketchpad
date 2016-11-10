@@ -19,14 +19,27 @@ function populate(){
 
 	$('.grid-item').hover(
 		function(){	
-			var colors = $(this).css('background-color');
-			var rgb = colors.match(/\d+/g);
-			currentColor = rgb[0] // r == g == b, always	
-			newColor = Math.max(0, currentColor - brush_power);			
-			$(this).css('background-color', 'rgb(' + newColor + ',' + newColor + ',' + newColor + ')');
+			red_new = 0;
+			blue_new = 0;
+			green_new = 0;
+			if (current_mode == BrushMode.GRAYSCALE){
+				var colors = $(this).css('background-color');
+				var rgb = colors.match(/\d+/g);
+				currentColor = rgb[0] // r == g == b, always	
+				newColor = Math.max(0, currentColor - brush_power);			
+				red_new = newColor;
+				blue_new = newColor;
+				green_new = newColor;
+			} else{				
+				red_new = parseInt(Math.random() * 256);
+				blue_new = parseInt(Math.random() * 256);
+				green_new = parseInt(Math.random() * 256);
+				console.log(red_new);
+			}
+			$(this).css('background-color', 'rgb(' + red_new + ',' + blue_new + ',' + green_new + ')');
 		},
 		function(){
-			//$(this).removeClass('highlight');
+			
 		}
 	);
 }
@@ -67,11 +80,11 @@ function emptyGrid(){
 function setGrayscaleMode(){
 	emptyGrid();
 	populate();
-	current_mode = Brushmode.GRAYSCALE;
+	current_mode = BrushMode.GRAYSCALE;
 }
 
 function setRainbowMode(){
 	emptyGrid();
 	populate();
-	current_mode = Brushmode.RAINBOW;
+	current_mode = BrushMode.RAINBOW;
 }
