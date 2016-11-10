@@ -43,6 +43,23 @@ function askNumberOfGrids(){
 	populate();
 }
 
+function askBrushPower(){
+	max_value = 100;
+	min_value = 5;
+
+	var new_brush_power = prompt("Please enter the desired brush \"power\" (between " + min_value + " and " + max_value +").", 40);
+	if (new_brush_power >= min_value && new_brush_power <= max_value){
+		brush_power = new_brush_power;
+	} else{
+		alert("Invalid brush power. Please pick a number between " + min_value + " and " + max_value + ".");
+	}
+
+	emptyGrid();
+	populate();
+}
+
+
+
 function emptyGrid(){
 	$('#grid').empty();
 }
