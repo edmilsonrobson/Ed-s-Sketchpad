@@ -54,11 +54,11 @@ function populate(){
 }
 
 function askNumberOfGrids(){
-	var new_number_of_grids = prompt("Please enter the desired number size of the grid (between 1 and 40).", 16);
-	if (new_number_of_grids > 0 && new_number_of_grids <= 40){
+	var new_number_of_grids = prompt("Please enter the desired number size of the grid (between 1 and 64).", 16);
+	if (new_number_of_grids > 0 && new_number_of_grids <= 64){
 		grid_size = new_number_of_grids; // e.g 36 x 36
 	} else{
-		alert("Invalid number of grids. Please pick a number between 1 and 40.")
+		alert("Invalid number of grids. Please pick a number between 1 and 64.")
 	}
 
 	emptyGrid();
